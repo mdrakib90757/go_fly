@@ -75,6 +75,7 @@ class PaymentMethodScreen extends StatelessWidget {
     );
   }
 
+// build header
   Widget _buildHeader(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20),
@@ -82,10 +83,10 @@ class PaymentMethodScreen extends StatelessWidget {
         children: [
           Row(
             children: [
-              IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.white),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
+              // IconButton(
+              //   icon: const Icon(Icons.arrow_back, color: Colors.white),
+              //   onPressed: () => Navigator.of(context).pop(),
+              // ),
               const Expanded(
                 child: Text(
                   'Payment Method',
@@ -134,6 +135,7 @@ class PaymentMethodScreen extends StatelessWidget {
     );
   }
 
+  // build payment cut
   Widget _buildPaymentCard(String cardNumber, String imagePath) {
     return Card(
       color: Colors.white,
@@ -147,6 +149,7 @@ class PaymentMethodScreen extends StatelessWidget {
     );
   }
 
+  // build add new method
   Widget _buildAddNewMethod() {
     return Center(
       child: OutlinedButton.icon(
@@ -165,6 +168,7 @@ class PaymentMethodScreen extends StatelessWidget {
     );
   }
 
+  // payment datils build
   Widget _buildPaymentDetails() {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -183,6 +187,7 @@ class PaymentMethodScreen extends StatelessWidget {
     );
   }
 
+  // build total section
   Widget _buildTotalSection() {
     return Container(
       color: Colors.white,
@@ -214,6 +219,7 @@ class PaymentMethodScreen extends StatelessWidget {
   }
 }
 
+// second class DetailRow
 class _DetailRow extends StatelessWidget {
   final String label, value;
   const _DetailRow({required this.label, required this.value});
@@ -223,7 +229,7 @@ class _DetailRow extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment:.spaceBetween,
         children: [
           Text(label, style: const TextStyle(color: AppColors.textGrey)),
           Text(value, style: const TextStyle(fontWeight: FontWeight.bold)),

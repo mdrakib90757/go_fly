@@ -17,7 +17,7 @@ class BoardingPassScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Icon(Icons.arrow_back, color: Colors.white),
+                  // const Icon(Icons.arrow_back, color: Colors.white),
                   const Text('Boarding Pass', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
                   IconButton(
                     icon: const Icon(Icons.more_vert, color: Colors.white),
@@ -54,6 +54,7 @@ class BoardingPassScreen extends StatelessWidget {
     );
   }
 
+  // build flight details
   Widget _buildFlightDetails() {
     return Column(
       children: [
@@ -77,6 +78,7 @@ class BoardingPassScreen extends StatelessWidget {
     );
   }
 
+// build route in colum
   Widget _buildRouteColumn(String code, String city, {bool isEnd = false}) {
     return Column(
       crossAxisAlignment: isEnd ? CrossAxisAlignment.end : CrossAxisAlignment.start,
@@ -87,6 +89,7 @@ class BoardingPassScreen extends StatelessWidget {
     );
   }
 
+  // build passenger details
   Widget _buildPassengerDetails() {
     return Column(
       children: [
@@ -117,6 +120,7 @@ class BoardingPassScreen extends StatelessWidget {
     );
   }
 
+  // build detail item
   Widget _buildDetailItem(String label, String value, {bool isEnd = false}) {
     return Column(
       crossAxisAlignment: isEnd ? CrossAxisAlignment.end : CrossAxisAlignment.start,
@@ -127,6 +131,7 @@ class BoardingPassScreen extends StatelessWidget {
     );
   }
 
+  // build dotted diver
   Widget _buildDottedDivider() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -141,6 +146,7 @@ class BoardingPassScreen extends StatelessWidget {
     );
   }
 
+  // build barcode
   Widget _buildBarcode() {
     return Column(
       children: [

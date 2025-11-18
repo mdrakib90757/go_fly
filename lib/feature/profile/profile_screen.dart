@@ -42,6 +42,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  // build header
   Widget _buildHeader(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
@@ -62,6 +63,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  // build profile card
   Widget _buildProfileCard() {
     return Container(
       padding: const EdgeInsets.all(24),
@@ -84,6 +86,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  // build section title
   Widget _buildSectionTitle(String title) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0, left: 8.0),
@@ -91,6 +94,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  // build setting list
   Widget _buildSettingsList() {
     return Card(
       elevation: 0,
@@ -105,6 +109,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  // build support list
   Widget _buildSupportList() {
     return Card(
       elevation: 0,
@@ -118,6 +123,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  // build setting item
   Widget _buildSettingsItem(IconData icon, String title, {bool showSwitch = false, bool isLogout = false}) {
     return ListTile(
       leading: Icon(icon, color: AppColors.primary),

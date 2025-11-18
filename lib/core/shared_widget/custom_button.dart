@@ -3,7 +3,6 @@ import '../utils/color.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  // Change VoidCallback to VoidCallback? to allow null
   final VoidCallback? onPressed;
   final Color color;
   final Color textColor;
@@ -21,7 +20,6 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         foregroundColor: textColor,
-        // Use a different color for the disabled state to give visual feedback
         backgroundColor: onPressed != null ? color : Colors.grey.shade300,
         minimumSize: const Size(double.infinity, 56),
         shape: RoundedRectangleBorder(
@@ -29,14 +27,12 @@ class CustomButton extends StatelessWidget {
         ),
         elevation: 2,
       ),
-      // The onPressed parameter now correctly accepts a nullable function
       onPressed: onPressed,
       child: Text(
         text,
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w600,
-          // Change text color when disabled
           color: onPressed != null ? textColor : Colors.white70,
         ),
       ),

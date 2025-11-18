@@ -50,16 +50,17 @@ class _SeatSelectorScreenState extends State<SeatSelectorScreen> {
     );
   }
 
+  // build header
   Widget _buildHeader(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
+          // IconButton(
+          //   icon: const Icon(Icons.arrow_back, color: Colors.white),
+          //   onPressed: () => Navigator.of(context).pop(),
+          // ),
           const Text('Select Your Seat', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
           const SizedBox(width: 48),
         ],
@@ -67,6 +68,7 @@ class _SeatSelectorScreenState extends State<SeatSelectorScreen> {
     );
   }
 
+  // build legend
   Widget _buildLegend() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -78,6 +80,7 @@ class _SeatSelectorScreenState extends State<SeatSelectorScreen> {
     );
   }
 
+  // build item
   Widget _buildLegendItem(Color color, String text, {bool hasBorder = false}) {
     return Row(
       children: [
@@ -97,6 +100,7 @@ class _SeatSelectorScreenState extends State<SeatSelectorScreen> {
     );
   }
 
+  // build seat layout
   Widget _buildSeatLayout() {
     return Column(
       children: [
@@ -127,6 +131,7 @@ class _SeatSelectorScreenState extends State<SeatSelectorScreen> {
     );
   }
 
+  // build seat rom
   Widget _buildSeatRow(List<String> seats, List<String> unavailableSeats) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -143,6 +148,7 @@ class _SeatSelectorScreenState extends State<SeatSelectorScreen> {
     );
   }
 
+  // build seat item
   Widget _buildSeatItem(String seatId, List<String> unavailableSeats) {
     bool isUnavailable = unavailableSeats.contains(seatId);
     bool isSelected = _selectedSeat == seatId;

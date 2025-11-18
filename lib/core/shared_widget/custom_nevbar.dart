@@ -44,12 +44,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       color: AppColors.background,
       child: Stack(
         children: [
-          // The custom painted white shape
           CustomPaint(
             size: Size(MediaQuery.of(context).size.width, 88),
             painter: CustomNavPainter(),
           ),
-          // The central "Home" button
           Center(
             heightFactor: 0.6,
             child: FloatingActionButton(
@@ -61,7 +59,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               child: const Icon(Icons.home),
             ),
           ),
-          // The other navigation icons
           Positioned(
             left: 0,
             right: 0,

@@ -8,20 +8,19 @@ class MyTicketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      body: SafeArea(
-        child: Column(
-          children: [
-            _buildHeader(),
-            Expanded(child: _buildTicketList()),
-          ],
-        ),
+      body: Column(
+        children: [
+          _buildHeader(),
+          Expanded(child: _buildTicketList()),
+        ],
       ),
     );
   }
 
+  // build header widget
   Widget _buildHeader() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 30),
+     padding: const EdgeInsets.fromLTRB( 20,20, 20, 30),
       decoration: const BoxDecoration(
         color: AppColors.primary,
         borderRadius: BorderRadius.only(
@@ -29,39 +28,43 @@ class MyTicketScreen extends StatelessWidget {
           bottomRight: Radius.circular(40),
         ),
       ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const CircleAvatar(
-                backgroundImage: AssetImage('assets/profile.png'),
-                radius: 24,
-              ),
-              const Text(
-                'My Ticket',
-                style: TextStyle(
-                    color: AppColors.textLight,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.1),
-                  shape: BoxShape.circle,
+      child: Padding(
+        padding:EdgeInsets.symmetric(vertical: 25),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const CircleAvatar(
+                  backgroundImage: AssetImage('assets/image/profile.png'),
+                  radius: 24,
                 ),
-                child: const Icon(Icons.tune, color: AppColors.textLight),
-              ),
-            ],
-          ),
-          const SizedBox(height: 24),
-          _buildFlightRoute(),
-        ],
+                const Text(
+                  'My Ticket',
+                  style: TextStyle(
+                      color: AppColors.textLight,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.tune, color: AppColors.textLight),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            _buildFlightRoute(),
+          ],
+        ),
       ),
     );
   }
 
+  // build flight route widget
   Widget _buildFlightRoute() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,6 +100,7 @@ class MyTicketScreen extends StatelessWidget {
     );
   }
 
+  // build ticket widget
   Widget _buildTicketList() {
     return ListView(
       padding: const EdgeInsets.all(20.0),
@@ -110,6 +114,8 @@ class MyTicketScreen extends StatelessWidget {
   }
 }
 
+
+// ticket card class
 class _TicketCard extends StatelessWidget {
   final String airline, price, from, to, departure, arrival;
   const _TicketCard({required this.airline, required this.price, required this.from, required this.to, required this.departure, required this.arrival});

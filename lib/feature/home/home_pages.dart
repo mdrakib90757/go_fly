@@ -21,6 +21,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  // build header
   Widget _buildHeader(BuildContext context ) {
     return Container(
       padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
@@ -44,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen(),));
                     },
                     child: CircleAvatar(
-                      // backgroundImage: AssetImage('assets/profile.png'),
+                      backgroundImage: AssetImage('assets/image/profile.png'),
                       radius: 24,
                     ),
                   ),
